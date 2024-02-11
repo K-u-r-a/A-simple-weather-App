@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: "Nunito", sans-serif;
+        font-size: 30px;
+      }
+      h1 {
+        color: blueviolet;
+      }
+      ul {
+        list-style: none;
+      }
+      ul li:hover {
+        background-color: beige;
+        border: 2px solid beige;
+        border-radius: 20px;
+        max-width: 400px;
+        text-align: center;
+      }
+      button {
+        border: 1px solid blueviolet;
+        border-radius: 50px;
+        padding: 20px;
+        background-color: blueviolet;
+        color: #fff;
+        font-size: 30px;
+        margin-top: 2px;
+        box-shadow: 5px 7px 12px #000;
+      }
+      button:hover {
+        transition: all 200ms ease-in-out;
+        color: #fff;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🌤️<br />Currently 21&deg; in New York</h1>
+    <h2>13&deg; / <strong>23&deg;</strong></h2>
+    <ul>
+      <li>
+        🌧️ <strong>Tomorrow</strong>
+        <p>10&deg; / 22&deg;</p>
+      </li>
+      <li>
+        🌥️ <strong>Saturday</strong>
+        <p>15&deg; / 17&deg;</p>
+      </li>
+      <li>
+        ☀️ <strong>Sunday</strong>
+        <p>25&deg; / 28&deg;</p>
+      </li>
+    </ul>
+    <button>Change City</button>
+    <p>Coded by Kura Chepkemoi</p>
+    <script>
+      function changeCity() {
+        let city = prompt("Which city are you living in?");
+        let temperature = prompt(
+          "What is the current temperature of your city?"
+        );
+        let heading = document.querySelector("h1");
+        if (temperature >= 1) {
+          heading.innerHTML =
+            "😊<br />Currently" +
+            " " +
+            temperature +
+            " " +
+            "°C in" +
+            " " +
+            city;
+        } else {
+          heading.innerHTML =
+            "😌<br />Currently" +
+            " " +
+            temperature +
+            " " +
+            "°C in" +
+            " " +
+            city;
+        }
+      }
+      let changeCityButton = document.querySelector("button");
+      changeCityButton.addEventListener("click", changeCity);
+    </script>
+  </body>
+</html>
